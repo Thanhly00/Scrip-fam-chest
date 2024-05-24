@@ -1,3 +1,15 @@
+-- Script to welcome a player to the game
+
+-- Function to send a welcome message to a player
+local function sendWelcomeMessage(player)
+    local welcomeMessage = "Chào mừng " .. player.Name .. " đã đến với thành Blox Fruit!"
+    player:SendMessage(welcomeMessage)
+end
+
+-- Event that triggers when a player joins the game
+game.Players.PlayerAdded:Connect(function(player)
+    sendWelcomeMessage(player)
+end)
 highChestOnly = true
 godsChalicSniper = false
 repeat task.wait(4) until game:IsLoaded()
